@@ -17,10 +17,10 @@ public class Main{
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         var app = Javalin.create(/*config*/)
-                .start(7071);
+                .start(7070);
 
         app
-                .get("/", ActorController.listActorApi)
+                .get("/actor/<page>", ActorController.listActorApi)
                 .get("/{actor_id}", ActorController.ActorDetail)
                 .delete("/{actor_id}", ActorController.delActor)
                 .get("/film-category", FilmCategoryController.listFilmCategory)
